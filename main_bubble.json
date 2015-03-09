@@ -1,0 +1,28 @@
+{"name":"bubble", "children": [
+{"name":"Atlas","description":"Atlas of Global Agriculture",
+"children":[
+	{"name": "Geography","address":"http://sunsp.net/portfolio.html", "note":"Global crop geography, including precipitation, temperature, crop area, etc."},
+	{"name": "Crop Land","address":"http://sunsp.net/portfolio.html"},
+	{"name": "Crop Yields","address":"http://sunsp.net/portfolio.html", "note":"Maize, wheat, rice, and soybean yields in 2000"}
+]},
+{"name": "AgLab", "description": "Virtual Lab of Global Agriculture",
+"children":[
+	{"name":"Excess Nutrient","address":"http://sunsp.net/portfolio.html","note":"Prototype Infographics on Excess Fertilizer Nutrients"},
+	{"name":"Yield Gap","address":"http://sunsp.net/portfolio.html", "note":"The gap between attainable yields and actual yields, with modeled yields assuming the percentage of gap closed."},
+	{"name":"Fertilizer","address":"http://sunsp.net/portfolio.html"}
+]},
+{"name":"Nutshell", "description":"Profiles of Country",
+"children":[
+	{"name":"Efficiency","address":"http://sunsp.net/portfolio.html"},
+	{"name":"Excess Nutrient","address":"http://sunsp.net/portfolio.html"},
+	{"name":"Economy","address":"http://sunsp.net/portfolio.html"},
+	{"name":"Agriculture","address":"http://sunsp.net/portfolio.html"}
+]},
+{"name":"Data", "description":"Crop Data in 5 minutes grid",
+"children":[
+	{"name":"Geography","address":"http://www.earthstat.org/"},
+	{"name":"Crop Land","address":"http://www.earthstat.org/"},
+	{"name":"Crop Yields","address":"http://www.earthstat.org/"}
+]}
+]}
+
