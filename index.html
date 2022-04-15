@@ -37,7 +37,7 @@
   </body>
     <script>
 
-    let b = new BubbleUI('#mainBubble');
+    let b = new BubbleUI('#mainBubble', options = {margins: [5,5,5,5]}); // see the source file for options
     b.init();
     
     d3.json("main_bubble.json", function (error, root) {

@@ -16,9 +16,9 @@ class BubbleUI {
             "margins": [20, 20, 20, 20], // top, left, bottom, right margins to the DIV
             "maxChildrenNum": 8,
             "subBubbleSizeRatios": [0.9, 0.95],
-            "textSizes": [30, 45, 18, 6, 12, 4], // text sizes for bubble text and sub-bubble text, normal, enlarged, shrinked
+            "textSizes": [30, 45, 18, 6, 12, 4], // text sizes for bubble text and sub-bubble text, normal, enlarged, shrunk
             "textOpacities": [0.8, 0.4, 0.1],
-            "bubbleOpacities":[0.4, 0.4, 0.1], // opacities for top level bubbles, sub-bubble: normal, shrinked
+            "bubbleOpacities":[0.4, 0.4, 0.1], // opacities for top level bubbles, sub-bubble: normal, shrunk
             "bubbleColors": d3.scale.category10(),
             "responsiveSetting": (p) => {
                 if (p >= 1080) return 4;
@@ -34,7 +34,7 @@ class BubbleUI {
         this.div = d3.select(div_id);
 
         this.initR = 0;
-        this.sR = 0; //shrinked or smaller Radius for circles not being clicked/focused
+        this.sR = 0; //shrunk or smaller Radius for circles not being clicked/focused
         this.nTop = 0;
         this.maxSubN = this.options.maxChildrenNum;
         this.colN = 0;
@@ -160,7 +160,7 @@ class BubbleUI {
         return (i, n, w, l = 20, r = 20, t = 20, b = 20, el = 2) => {
 
             let wi = w - l - r, // the inner width
-                x = wi / 4 / (m - 1 + el); // the size of shrinked circle when normal circle enlarged
+                x = wi / 4 / (m - 1 + el); // the size of shrunk circle when normal circle enlarged
 
             let cXs = new Array(n), cYs = new Array(n), cRs = new Array(n);
 
