@@ -1,0 +1,179 @@
+/* main body styling */
+
+#mainBubble {
+	background: #fff;
+	border: solid 1px #ddd;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0);
+	font: 10px sans-serif;
+	height: 300px;
+	position: relative;
+	width: 95%;
+}
+
+#mainBubble svg {
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
+#mainBubble circle.topBubble {
+	fill: #aaa;
+	stroke: #666;
+	stroke-width: 1.5px;
+	opacity: 0.3;
+}
+
+#mainBubble text.topBubbleText {
+	text-anchor: middle;
+	dominant-baseline: middle;
+	alignment-baseline: middle;
+}
+
+#mainBubble circle.childBubble {
+	cursor: pointer;
+	opacity: 0.5;
+	fill: #eee;
+}
+
+#mainBubble text.childBubbleText {
+	cursor: pointer;
+	text-anchor: middle;
+	dominant-baseline: middle;
+	alignment-baseline: middle;
+	opacity: 0.5;
+}
+
+body {
+	background: #bbb;
+	font-family: Georgia, Helvetica, Arial, sans-serif;
+}
+
+#footnote {
+	font-size: medium;
+	color: #333333;
+}
+
+#navigation ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#navigation ul li {
+	margin-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+#navigation ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+#navigation ul li a:hover,
+h1.title a:hover,
+#backLink a:hover {
+	color: #bbb;
+	background-color: #09c;
+}
+
+#navigation ul,
+#navigation li {
+	display: inline;
+}
+
+#navigation li:before {
+	color: #333;
+	content: " | ";
+}
+
+
+#content p,
+#content ul,
+#content blockquote {
+	font-size: 13px;
+	line-height: 19px;
+}
+
+#page {
+	background: white;
+	position: relative;
+	width: 75%;
+	margin: 0px 0 20px 10%;
+	padding: 18px 18px 18px 18px;
+}
+
+#page a {
+	color: #000;
+	text-decoration: underline;
+}
+
+#page a:hover {
+	color: #FFF;
+	background-color: #000;
+	text-decoration: none;
+}
+
+
+a {
+	color: #000;
+}
+
+
+.bibliquote {
+	text-align: right;
+	margin-right: auto;
+}
+
+.attribution:before {
+	content: "--";
+}
+
+.attribution {
+	text-indent: 20px;
+	color: #666;
+}
+
+
+.code {
+	font-family: Courier, Courier New, serif;
+	background-color: #DDD;
+	border-width: .5px;
+	border-style: solid;
+	border-color: #BBB;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.code ul,
+.code ul li {
+	list-style: none;
+	padding-left: 2px;
+	margin-left: 2px;
+	line-height: 120%;
+}
+
+blockquote {
+	border-left: 1px dashed #999;
+	margin-left: 30px;
+	padding-left: 15px;
+}
+
+
+
+#page li.comment {
+	font-size: 12px;
+	line-height: 17px;
+}
+
+#page li.comment p {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+#page li.comment p.blogmeta {
+	color: #777;
+	font-size: 12px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+
+}
