@@ -21,7 +21,7 @@ class BubbleUI {
             "bubbleOpacities":[0.4, 0.4, 0.1], // opacities for top level bubbles, sub-bubble: normal, shrunk
             "bubbleColors": d3.scale.category10(),
             "responsiveSetting": (p) => {
-                if (p >= 1080) return 4;
+                if (p >= 1000) return 4;
                 else if (p >= 600) return 2;
                 else return 1;
             }

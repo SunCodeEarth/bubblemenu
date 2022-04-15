@@ -2,7 +2,7 @@
 <html>
   <head>    
   
-	<link rel="stylesheet" type="text/css" href="bubbleui.css">
+	<link rel="stylesheet" type="text/css" href="./bubbleui.css">
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/d3@3" charset="utf-8"></script>
   <script type="text/javascript" src="http://sunsp.net/script/ga_sunsp.js"></script>    
@@ -37,8 +37,9 @@
   </body>
     <script>
 
-    let b = new BubbleUI('#mainBubble', options = {margins: [5,5,5,5]}); // see the source file for options
-    b.init();
+    let b = new BubbleUI('#mainBubble', options = {
+      margins: [5,5,5,5] // see the source file for options
+    }).init();
     
     d3.json("main_bubble.json", function (error, root) {
         b.addData(root);
