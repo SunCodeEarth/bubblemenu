@@ -1,93 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>    
-  
-	<link rel="stylesheet" type="text/css" href="./bubbleui.css">
+  <head>
+    <link rel="stylesheet" type="text/css" href="./bubbleui.css" />
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/d3@3" charset="utf-8"></script>
-  <script type="text/javascript" src="http://sunsp.net/script/ga_sunsp.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/d3@7" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-color@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-interpolate@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-scale-chromatic@3"></script>
 
-  <script type="text/javascript" src="./bubbleui-min.js"></script>    
+    <script type="text/javascript" src="../src/bubbleui.js"></script>
 
-    <title>
-      Bubble Menu
-    </title>
+    <title>Bubble Menu</title>
   </head>
 
   <body>
-<html>
-
-
-<div id="page">
-     <div id="mainBubble">
-    </div>
-    <div id="content">
-      <p class="bibliquote"><span class="attribution">
-        <a href="http://sunsp.net/code/bubbleMenu.html" target="_blank">Source Code</a>
-        <a href="http://sunsp.net/code/main_bubble_json.html" target="_blank">JSON File</a>
-      </span> </p>
-      <p class="bibliquote"><span class="attribution">By  
-        <a href="http://sunsp.net/" target="_blank"> Shipeng Sun</a>, currently at 
-        <a href="http://www.geo.hunter.cuny.edu" target="_blank">Department of Geography and Environmental Science, Hunter College</a>
-      </span> </p>
-    </div>
-</div>
-
-</html>
+    <html>
+      <div id="page">
+        <div id="mainBubble"></div>
+        <div id="content">
+          <p class="bibliquote">
+            <span class="attribution">
+              <a href="http://sunsp.net/code/bubbleMenu.html" target="_blank"
+                >Source Code</a
+              >
+              <a
+                href="http://sunsp.net/code/main_bubble_json.html"
+                target="_blank"
+                >JSON File</a
+              >
+            </span>
+          </p>
+          <p class="bibliquote">
+            <span class="attribution"
+              >By <a href="http://sunsp.net/" target="_blank"> Shipeng Sun</a>,
+              currently at
+              <a href="http://www.geo.hunter.cuny.edu" target="_blank"
+                >Department of Geography and Environmental Science, Hunter
+                College</a
+              >
+            </span>
+          </p>
+        </div>
+      </div>
+    </html>
   </body>
-    <script>
+  <script>
+    let b = new BubbleUI(
+      "#mainBubble",
+      (options = {
+        margins: [5, 5, 5, 5], // see the source file for options
+      })
+    ).init();
 
-    let b = new BubbleUI('#mainBubble', options = {
-      margins: [5,5,5,5] // see the source file for options
-    }).init();
-    
-    d3.json("main_bubble.json", function (error, root) {
-        b.addData(root);
-        b.resize();
+    d3.json('./main_bubble.json').then((d) => {
+      console.log(d);
+      b.addData(d);
+      b.resize();
     });
 
     window.onresize = () => {
       b.resize();
     };
-
   </script>
 
-<div id="mainfooter">
-<div style="display:none">
-<a href="http://www3.clustrmaps.com/counter/maps.php?url=http://sunsp.net" id="clustrMapsLink"><img src="http://www3.clustrmaps.com/counter/index2.php?url=http://sunsp.net" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
-</a>
-<script type="text/javascript">
-function cantload() {
-img = document.getElementById("clustrMapsImg");
-img.onerror = null;
-img.src = "http://www2.clustrmaps.com/images/clustrmaps-back-soon.jpg";
-document.getElementById("clustrMapsLink").href = "http://www2.clustrmaps.com";
-}
-img = document.getElementById("clustrMapsImg");
-img.onerror = cantload;
-</script>
-<p>
-<a href="http://m.maploco.com/details/f9752o9c"><img style="border:0px;" src="http://www.maploco.com/vmap/s/8522832.png" alt="Locations of Site Visitors" title="Locations of Site Visitors"/></a>
-</p>
-<p>
-<!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
-var sc_project=9563557; 
-var sc_invisible=0; 
-var sc_security="4a72786c"; 
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div style="display:none" class="statcounter"><a title="view StatCounter analytics from 01/24/2014" href="http://statcounter.com/p9563557/?guest=1" target="_blank">
-<img class="statcounter" src="http://c.statcounter.com/9563557/0/4a72786c/0/" alt="web analytics"></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
-</p>
-<script type="text/javascript">
-document.write("<p style=\"font-size: 60%\"><a title=\"view StatCounter analytics from 01/24/2014\" href=\"http://statcounter.com/p9563557/?guest=1\">View StatCounter</a></p>");
-</script>
-</div>
-</div>
 </html>

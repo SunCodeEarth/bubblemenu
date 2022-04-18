@@ -18,8 +18,8 @@ class BubbleUI {
             "subBubbleSizeRatios": [0.9, 0.95],
             "textSizes": [30, 45, 18, 6, 12, 4], // text sizes for bubble text and sub-bubble text, normal, enlarged, shrunk
             "textOpacities": [0.8, 0.4, 0.1],
-            "bubbleOpacities":[0.4, 0.4, 0.1], // opacities for top level bubbles, sub-bubble: normal, shrunk
-            "bubbleColors": d3.scale.category10(),
+            "bubbleOpacities": [0.4, 0.4, 0.1], // opacities for top level bubbles, sub-bubble: normal, shrunk
+            "bubbleColors": d3.scaleOrdinal(d3.schemeCategory10),
             "responsiveSetting": (p) => {
                 if (p >= 1000) return 4;
                 else if (p >= 600) return 2;
@@ -74,15 +74,14 @@ class BubbleUI {
             .attr("class", "topBubble")
             .attr("id", (d, i) => "topBubble" + i)
             .style("fill", (d, i) => colVals(i))
-            .on("mouseover", (d, i) => this.activate(i));
+            .on("mouseenter", (e, d) => this.activate(parseInt(e.target.id.replace(/[^\d.]/g, ''))));
 
         bubbleObj
             .append("text")
             .attr("class", "topBubbleText")
             .text((d) => d.name)
-            .style("fill", (d, i) => colVals(i))
-            .on("mouseover", (d, i) => this.activate(i));
-
+            .style("fill", (d, i) => colVals(i));
+            
         for (var iB = 0; iB < this.nTop; iB++) {
             let childBubbles = this.svg
                 .selectAll(".childBubble" + iB)
@@ -95,7 +94,7 @@ class BubbleUI {
                 .attr("class", "childBubble childBubble" + iB)
                 .attr("id", (d, i) => "childBubble_" + iB + "sub_" + i)
                 .on("click", (d, i) => window.open(d.address))
-                .on("mouseover", (d, i) => {
+                .on("mouseenter", (d, i) => {
                     var noteText = "";
                     if (d.note == null || d.note == "") {
                         noteText = d.address;
@@ -249,7 +248,7 @@ class BubbleUI {
 
 
     reset() {
-        let w = document.getElementById("mainBubble").offsetWidth,
+        let w = this.div.node().offsetWidth,
             m = this.colN,
             oR = this.initR,
             tm = this.options.margins[0],
@@ -277,7 +276,7 @@ class BubbleUI {
 
         for (var iB = 0; iB < this.nTop; iB++) {
             t.selectAll(".childBubbleText" + iB)
-                .attr("font-size",this.options.textSizes[3])
+                .attr("font-size", this.options.textSizes[3])
                 .style("opacity", this.options.textOpacities[1])
                 .attr("x", (d, i) => this.subBubblePos(i, centerXs[iB], centerYs[iB], oR, this.maxSubN, 0, 'x'))
                 .attr("y", (d, i) => this.subBubblePos(i, centerXs[iB], centerYs[iB], oR, this.maxSubN, 0, 'y'));
@@ -305,7 +304,7 @@ class BubbleUI {
      * @param {*} i 
      */
     activate(i) {
-        let w = document.getElementById("mainBubble").offsetWidth,
+        let w = this.div.node().offsetWidth,
             m = this.colN,
             tm = this.options.margins[0],
             lm = this.options.margins[1],
@@ -327,14 +326,14 @@ class BubbleUI {
         t.selectAll(".topBubbleText")
             .attr("x", (d, ii) => centerXs[ii])
             .attr("y", (d, ii) => centerYs[ii])
-            .attr("font-size", (d, ii) => (i == ii) ? this.options.textSizes[1]: this.options.textSizes[2]);
+            .attr("font-size", (d, ii) => (i == ii) ? this.options.textSizes[1] : this.options.textSizes[2]);
 
         for (let k = 0; k < this.nTop; k++) {
 
             t.selectAll(".childBubbleText" + k)
                 .attr("x", (d, i) => this.subBubblePos(i, centerXs[k], centerYs[k], centerRs[k], this.maxSubN, 0, 'x'))
                 .attr("y", (d, i) => this.subBubblePos(i, centerXs[k], centerYs[k], centerRs[k], this.maxSubN, 0, 'y'))
-                .attr("font-size", () => k == i ? this.options.textSizes[4] :  this.options.textSizes[5])
+                .attr("font-size", () => k == i ? this.options.textSizes[4] : this.options.textSizes[5])
                 .style("opacity", () => k == i ? this.options.textOpacities[0] : this.options.textOpacities[2]);
 
             t.selectAll(".childBubble" + k)
