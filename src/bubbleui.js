@@ -80,8 +80,8 @@ class BubbleUI {
             .append("text")
             .attr("class", "topBubbleText")
             .text((d) => d.name)
-            .style("fill", (d, i) => colVals(i));
-            
+            .style("fill", (d, i) => colVals(i)); 
+
         for (var iB = 0; iB < this.nTop; iB++) {
             let childBubbles = this.svg
                 .selectAll(".childBubble" + iB)
