@@ -34,7 +34,7 @@ The BubbleUI class can create the bubble menu within a DIV. It also accept vario
 
 The options.
 
-| **Option** | **Explanation**  | **Default Value**  | **Example Values** |  
+| **Option** | <div style="width:180px">**Explanation**</div>  | **Default Value**  | **Example Values** |  
 |------------|------------------|--------------------|--------------------|
 | "focalEnlargeFactor" | enlarge factor for focused bubble    | 2      | 3.2 |
 | "margins" | [top, left, bottom, right] margins to the DIV | [20, 20, 20, 20] | [5, 5, 5, 5] | 
