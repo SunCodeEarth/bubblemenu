@@ -93,8 +93,8 @@ class BubbleUI {
                 .append("circle")
                 .attr("class", "childBubble childBubble" + iB)
                 .attr("id", (d, i) => "childBubble_" + iB + "sub_" + i)
-                .on("click", (d, i) => window.open(d.address))
-                .on("mouseenter", (d, i) => {
+                .on("click", (e, d) => window.open(d.address, "Site:" + d.name))
+                .on("mouseenter", (e, d) => {
                     var noteText = "";
                     if (d.note == null || d.note == "") {
                         noteText = d.address;
@@ -111,7 +111,7 @@ class BubbleUI {
                 .attr("class", "childBubbleText childBubbleText" + iB)
                 .style("fill", (d, i) => colVals(iB))
                 .text((d) => d.name)
-                .on("click", (d, i) => window.open(d.address));
+                .on("click", (e, d) => window.open(d.address));
         }
 
         return this;
@@ -185,7 +185,7 @@ class BubbleUI {
             }
 
             return { "x": cXs, "y": cYs, "r": cRs, "sr": x };
-        }
+        };
     }
 
     /**
