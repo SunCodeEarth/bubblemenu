@@ -12,15 +12,15 @@ class BubbleUI {
     constructor(div_id, options = {}) {
 
         this.options = {
-            "focalEnlargeFactor": 2.0,
-            "margins": [20, 20, 20, 20], // top, left, bottom, right margins to the DIV
-            "maxChildrenNum": 8,
-            "subBubbleSizeRatios": [0.9, 0.95],
+            "focalEnlargeFactor": 2.0, //enlarge factor for focused bubble
+            "margins": [20, 20, 20, 20], // [top, left, bottom, right] margins to the DIV
+            "maxChildrenNum": 8, // maximum number of children nodes
+            "subBubbleSizeRatios": [0.9, 0.95], // sub-bubble size scale factor [initial, activated] 
             "textSizes": [30, 45, 18, 6, 12, 4], // text sizes for bubble text and sub-bubble text, normal, enlarged, shrunk
-            "textOpacities": [0.8, 0.4, 0.1],
+            "textOpacities": [0.8, 0.4, 0.1], //text opacities for top-level and sub-level texts
             "bubbleOpacities": [0.4, 0.4, 0.1], // opacities for top level bubbles, sub-bubble: normal, shrunk
-            "bubbleColors": d3.scaleOrdinal(d3.schemeCategory10),
-            "responsiveSetting": (p) => {
+            "bubbleColors": d3.scaleOrdinal(d3.schemeCategory10), // A function returns the top level bubble color
+            "responsiveSetting": (p) => { //A function that returns the number of columns for the bubbles.
                 if (p >= 1000) return 4;
                 else if (p >= 600) return 2;
                 else return 1;
