@@ -19,7 +19,7 @@ Note that this is based on the version 7 of d3.js.
 ```
 ### Create a BubbleUI Object
 
-The BubbleUI class can create the bubble menu within a DIV. It also accept various options (see the source code for the details of the options).
+The BubbleUI class can create the bubble menu within a DIV. It also accept various options (see below and the source code for the details of the options).
 
 ```
     let b = new BubbleUI('#mainBubble', options  ={
@@ -29,12 +29,12 @@ The BubbleUI class can create the bubble menu within a DIV. It also accept vario
             else if (p >= 600) return 2;
             else return 1;
         },
-        }).init(); // see the source file for options
+        }).init(); 
 ```
 
 The options.
 
-| **Option** | **Explanation**  | **Default Value**  | **Example Values** |  
+| **Option** | **Explanation** | **Default Value**  | **Example Values** |  
 |------------|------------------|--------------------|--------------------|
 | "focalEnlargeFactor" | enlarge factor for focused bubble    | 2      | 3.2 |
 | "margins" | [top, left, bottom, right] margins to the DIV | [20, 20, 20, 20] | [5, 5, 5, 5] | 
