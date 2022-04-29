@@ -19,7 +19,7 @@ Note that this is based on the version 7 of d3.js.
 ```
 ### Create a BubbleUI Object
 
-The BubbleUI class can create the bubble menu within a DIV. It also accept various options (see the source code for the details of the options).
+The BubbleUI class can create the bubble menu within a DIV. It also accept various options (see below and the source code for the details of the options).
 
 ```
     let b = new BubbleUI('#mainBubble', options  ={
@@ -29,12 +29,12 @@ The BubbleUI class can create the bubble menu within a DIV. It also accept vario
             else if (p >= 600) return 2;
             else return 1;
         },
-        }).init(); // see the source file for options
+        }).init(); 
 ```
 
 The options.
 
-| **Option** | <div style="width:180px">**Explanation**</div>  | **Default Value**  | **Example Values** |  
+| **Option** | **Explanation** | **Default Value**  | **Example Values** |  
 |------------|------------------|--------------------|--------------------|
 | "focalEnlargeFactor" | enlarge factor for focused bubble    | 2      | 3.2 |
 | "margins" | [top, left, bottom, right] margins to the DIV | [20, 20, 20, 20] | [5, 5, 5, 5] | 
@@ -43,7 +43,7 @@ The options.
 | "textSizes" | text sizes for [bubble text and sub-bubble text: normal, enlarged, shrunk] | [30, 45, 18, 6, 12, 4] | [30, 42, 18, 4, 8, 3] |
 | "textOpacities" | text opacities for top-level and sub-level texts  | [0.8, 0.4, 0.1] | - | 
 | "bubbleOpacities" | opacities for top level bubbles, sub-bubble  | [0.4, 0.4, 0.1] |  - |   
-| "bubbleColors" | A function returns the top level bubble color: ```function foo(i) { return color of i th bubble; }``` | <code> d3.scaleOrdinal(d3.schemeCategory10) </code>| <code> (i) => ["blue", "green","red", "#555"][i] </code> |
+| "bubbleColors" | A function returns the top level bubble color: ```function foo(i) { return color of i th bubble; }``` | <code> d3.scaleOrdinal( d3.schemeCategory10 ) </code>| <code> (i) => ["blue", "green","red", "#555"][i] </code> |
 | "responsiveSetting" | A function that returns the number of columns for the bubbles. Parameter for the function is the width of the holding DIV. | ```(p) => {  if (p >= 1000) return 4; else if (p >= 600) return 2; else return 1;} ``` | ```(p) => { if (p >= 1400) return 4; else if (p >= 900) return 2; else return 1;} ```|
 
  
